@@ -1,0 +1,129 @@
+:root {
+  --main-color: black;
+  /*PARA LLAMAR A LA VARIABLE var(--main-bg-color)*/
+}
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", Helvetica, sans-serif;
+  background-color: #f4f4f4;
+  overflow-x: clip;
+  cursor: url(../img/cursor.png), auto;
+}
+/*Elemento en el que se carga el header.html*/
+#header {
+  position: relative;
+  top: 0;
+  z-index: 4;
+}
+/*---- ---- ---- CATALOGO ---- ---- ----*/
+.contenedor-catalogo {
+  z-index: 1;
+  display: grid;
+  gap: 20px;
+  padding: 1%;
+  background-color: #7e9ee2;
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+}
+.contenido-catalogo {
+  grid-column: 1fr;
+  height: 400px;
+  background-color: #7fc3fa;
+  border-radius: 7px;
+}
+.contenido-catalogo:hover {
+  transform: scale(1.02);
+}
+.contenido-catalogo a {
+  text-decoration: none;
+}
+
+.contenido-catalogo img {
+  width: 90%;
+  height: 70%;
+  margin: 5% 5%;
+  border-radius: 7px;
+  background-color: #f4f4f4;
+}
+.info-articulo {
+  background-color: #f4f4f4;
+  width: 90%;
+  margin-bottom: 10px;
+  margin: auto;
+  padding: 1px;
+  border-radius: 7px;
+}
+.precio {
+  text-align: right;
+  margin-left: 20px;
+  align-self: flex-end;
+}
+button {
+  align-self: flex-end;
+  margin-left: 15px;
+}
+.btn-añadir {
+  width: 32px;
+  height: 32px;
+  background: url("../img/carrito.png");
+  border: none;
+  background-repeat: no-repeat;
+  border: 1px solid white;
+}
+.btn-añadir:hover {
+  border: 1px solid black;
+  border-radius: 8px;
+}
+/*---- ---- ---- MEDIA ---- ---- ----*/
+/* 48em = 768px */
+/*El ul ocupa 583px + logo*/
+@media (min-width: 1027px) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 10px 20px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+
+@media (max-width: 1027px) {
+  #d1 {
+    display: none;
+  }
+  .header {
+    background-color: rgb(91, 176, 247);
+    width: 100%;
+  }
+  .header li a {
+    margin: auto;
+    text-align: center;
+  }
+
+  ul {
+    width: 100%;
+  }
+}
+
+@media (max-width: 425px) {
+  .catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    height: 800px;
+  }
+  figure {
+    display: flex;
+    flex-direction: column;
+  }
+}
